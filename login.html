@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feminine era | login.</title>
+    <link rel="icon" href="swan.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300&display=swap">
+    <style>
+        body {
+          text-transform: none;
+          font-weight: 300;
+          font-style: normal;
+          color: #E1ACAC;
+          background-color: #FFEAE3;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          padding: 0;
+        }
+    
+        h1 {
+          font-size: 50px;
+          text-align: center;
+        }
+    
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1.5px solid #50196e; /* ACTIVITY 53 */
+          border-radius: 4px; /* ACTIVITY 53 */
+          box-sizing: border-box;
+          transition: border-color 1.5s; 
+        }
+    
+        input[type=text]:focus, input[type=password]:focus {
+          border: 2.1px solid #61307b;
+          outline: none;
+          background-color: #f0f4ff;
+          transition: background-color 1.5s; 
+        }
+    
+        .button {
+          width: 100%;
+          background-color: #e5d2ef;
+          color: #50196e;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: 1.5px solid #50196e;
+          border-radius: 4px;
+          cursor: pointer;
+          font-family: "Zilla Slab", serif;
+          font-weight: 400;
+          font-style: italic;
+          font-size: large;
+        }
+    
+        input[type=submit]:hover {
+          background-color: #ffffff;
+        }
+    
+        div {
+          font-family: "Zilla Slab", serif;
+          font-weight: 400;
+          font-style: italic;
+          border-radius: 5px;
+          background: linear-gradient(45deg, #fef8ff, #fdf4ff);
+          border: 1.5px solid #50196e;
+          padding: 20px;
+          max-width: 400px;
+          width: 100%;
+          text-align: center; 
+        }
+      </style>
+    </head>
+    <body>
+      <div>
+        <h1>Welcome!</h1>
+        <form action="index.html" method="get">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
+        </form>
+		  <a href = "index.html">
+          <button class="button">Log In</button><a>
+		  </a>
+      </div>
+    </body>
+    </html>
+</html>

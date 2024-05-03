@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>declutter first. | feminine era</title>
+  <link rel="icon" href="swan.png" type="image/x-icon">
+
+
+  <style>
+    body, html {
+      background-color: #F8F7F2;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .image {
+      position: absolute;
+      cursor: pointer;
+      filter: blur(3px); 
+      z-index: 2; 
+    }
+
+    .letter {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(8deg);
+      filter: blur(0.5px);
+      filter: drop-shadow(-3px -3px 3px rgb(192, 183, 184));
+      width: 40%;
+      z-index: 1; 
+    }
+
+    .declutter-text {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #c8abaede;
+      font-size: 18px;
+      transition: opacity 0.5s ease-out;
+      opacity: 1;
+    }
+
+    .declutter-text.hidden {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="ysl1.png" alt="YSL" class="image" style="top: 100px; left: 200px;">
+    <img src="dior3.png" alt="Dior" class="image" style="top: -55px; left: 300px;">
+    <img src="coach1.png" alt="Coach" class="image" style="top: -50px; left: 640px;">
+    <img src="vw1.png" alt="vivienne Westwood" class="image" style="top:73px; left: 550px;">
+    <img src="sony1.png" alt="Sony" class="image" style="bottom: 30px; right: 375px;">
+  </div>
+  
+  <div class="letter" id="letter">
+    <a href="letter.html">
+      <img src="letter.png" alt="Letter" class="letter">
+    </a>
+  </div>
+  
+  <div class="declutter-text" id="declutter-text">declutter first.</div>
+
+  <script>
+    var images = document.querySelectorAll('.image');
+    var isDragging = false;
+    var currentImage = null;
+    var offsetX, offsetY;
+    var declutterText = document.getElementById('declutter-text');
+    var letter = document.getElementById('letter');
+
+    images.forEach(function(image) {
+      image.addEventListener('mousedown', function(event) {
+        isDragging = true;
+        currentImage = image;
+        offsetX = event.clientX - image.getBoundingClientRect().left;
+        offsetY = event.clientY - image.getBoundingClientRect().top;
+        image.style.pointerEvents = 'none'; // Disable pointer events while dragging
+        declutterText.classList.add('hidden');
+      });
+
+      // Add event listener to prevent opening the image when dragging
+      image.addEventListener('dragstart', function(event) {
+        event.preventDefault();
+      });
+    });
+
+    // Prevent opening the letter image when dragging
+    letter.addEventListener('dragstart', function(event) {
+      event.preventDefault();
+    });
+
+    document.addEventListener('mousemove', function(event) {
+      if (isDragging && currentImage !== null) {
+        currentImage.style.left = event.clientX - offsetX + 'px'; // Adjust position based on mouse cursor
+        currentImage.style.top = event.clientY - offsetY + 'px';
+      }
+    });
+
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+      if (currentImage !== null) {
+        currentImage.style.pointerEvents = 'auto'; // Enable pointer events after dragging
+        currentImage = null;
+      }
+    });
+
+    document.addEventListener('mousemove', function() {
+      if (!isDragging) {
+        declutterText.classList.remove('hidden');
+        setTimeout(function() {
+          declutterText.classList.add('hidden');
+        }, 1000000); // Hide after 100 seconds if not moved
+      }
+    });
+
+    // Add hover effect to the letter PNG
+    letter.addEventListener('mouseenter', function() {
+      letter.style.filter = 'brightness(95%)';
+    });
+
+    letter.addEventListener('mouseleave', function() {
+      letter.style.filter = 'none';
+    });
+  </script>
+</body>
+</html>
+

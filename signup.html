@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>feminine era | signup</title>
+    <link rel="icon" href="swan.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300&display=swap">
+    <style>
+        body {
+          text-transform: none;
+          font-weight: 300;
+          font-style: normal;
+          color: #541e71;
+          background-color: #FFEAE3;
+          overflow: hidden;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          padding: 0;
+        }
+    
+        h1 {
+          font-size: 50px;
+          text-align: center;
+        }
+    
+        input[type=text], input[type=password] {
+          width: 100%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1.5px solid #50196e;
+          border-radius: 4px;
+          box-sizing: border-box;
+          transition: border-color 1.5s; 
+        }
+    
+        input[type=text]:focus, input[type=password]:focus {
+          border: 2.1px solid #61307b;
+          outline: none;
+          background-color: #f0f4ff;
+          transition: background-color 1.5s; 
+        }
+    
+        .button {
+          width: 100%;
+          background-color: #e5d2ef;
+          color: #50196e;
+          padding: 14px 20px;
+          margin: 8px 0;
+          border: 1.5px solid #50196e;
+          border-radius: 4px;
+          cursor: pointer;
+          font-family: "Zilla Slab", serif;
+          font-weight: 400;
+          font-style: italic;
+          font-size: large;
+        }
+    
+        .button: hover {
+          background-color: #ffffff;
+        }
+    
+        div {
+          font-family: "Zilla Slab", serif;
+          font-weight: 400;
+          font-style: italic;
+          border-radius: 5px;
+          background: linear-gradient(45deg, #fef8ff, #fdf4ff);
+          border: 1.5px solid #50196e;
+          padding: 20px;
+          max-width: 400px;
+          width: 100%;
+          text-align: center; 
+        }
+		select {
+		width: 50%;
+		font-size: 15px;
+		padding: 5px;
+		border-radius: 4px;
+		background-color: white;
+		}
+      </style>
+    </head>
+    <body>
+      <div>
+        <h1>Welcome!</h1>
+        <form action="index.html" method="get">
+          <label for="first name">First Name</label>
+          <input type="text" id="name" name="name">
+          <label for="last name">Last Name</label>
+          <input type="text" id="lname" name="lastname">
+		  <label for="gender"><b>Gender:</b></label>
+			<select id="gender" name="Gender">
+			<option value="male">Male</option>
+			<option value="female">Female</option>
+			</select><br><br>
+		  <label for="Email">Email</label>
+          <input type="text" id="mail" name="email">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password">
+        </form>
+		<a href = "index.html">
+          <button class="button">Register</button><a>
+      </div>
+</body>
+</body>
+</html>
